@@ -50,16 +50,17 @@
     
     %>
 
-            <div class="col-md-3 d-flex">
+            <div class="col-md-3 d-flex ">
                 <div class=" card text-center" style="width: 18rem;">
                     <!-- <form id="form" method="POST" action="/pagar"> -->
-                    <div class="form-group">
-                        <img src='<%= cs[i].img%>' style="width: 100% !important; height: 50% !important" class="card-img-top " alt="... ">
+                    <div class="form-group ">
+
                         <div class="card-body">
                             <h5 class="card-title titulo">
                                 <%= cs[i].titulo%>
                             </h5>
-                            <input type="text" name="precio" value="<%= cs[i].precio%>" hidden>
+                            <img src='<%= cs[i].img%>' style="width: 100% !important; height: 100% !important" class="card-img-top " alt="... ">
+
                             <p class="card-text desc">
                                 $
                                 <%= cs[i].precio%>

@@ -63,17 +63,27 @@
                       %>
                     <tr>
                         <th scope="row">
-                            <%= a++%>
+                            <select onchange="cantidad(this.value, '<%= otras[i].precio%>', '<%= i%>')">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
                         </th>
                         <td><img src='<%= otras[i].img%>' alt="" style="width: 150px; height: 150px;"> </td>
                         <td>
                             <%= otras[i].descripcion%>
                         </td>
                         <td>
-                            $
-                            <%= otras[i].precio%>
+                            <label id="<%= i%>">$<%= otras[i].precio%></label>
                         </td>
-                        <td><input class="btn btn-danger" onclick="borrar()" style="cursor: pointer" value="Eliminar"></td>
+                        <td><input class="btn btn-danger" type="button" onclick="borrar('<%= i%>')" style="cursor: pointer" value="Eliminar"></td>
                     </tr>
                     <%total = parseInt(otras[i].precio);
                     
@@ -88,11 +98,11 @@
                             </td>
                             <td></td>
                             <td style="background-color: darkgray">
-                                <h3>$
+                                <label id="todo">$
                                     <%= totals%>
-                                </h3>
+                                </label>
                             </td>
-                            <td style="background-color: darkgray"><input class="btn btn-danger" style="cursor: pointer" onclick="limpiar()" value="Vaciar bolsa"></td>
+                            <td style="background-color: darkgray"><input class="btn btn-danger" type="button" style="cursor: pointer" onclick="limpiar()" value="Vaciar bolsa"></td>
                         </tr>
             </tbody>
         </table>

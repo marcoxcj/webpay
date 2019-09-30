@@ -11,7 +11,50 @@ var articulos;
 var co;
 
 
-const borrar = () => {
+
+const cantidad = async(cantidad, precio, id) => {
+    var total = cantidad * precio;
+    var todoooo = 0;
+    var todo;
+    var precio = document.getElementById(id);
+    precio.innerHTML = `$${total}`;
+
+    articulos = await cargar();
+
+    for (let i = 0; i < articulos.length; i++) {
+
+        precio = document.getElementById(i);
+        precio = parseInt(precio.innerHTML.split('$')[1]);
+        todoooo += precio;
+
+        //todoooo += precio.innerHTML;
+    }
+
+    todo = document.getElementById("todo");
+    inputPrecio = document.getElementById("precio");
+
+    todo.innerHTML = `$${todoooo}`;
+    inputPrecio.value = todoooo;
+
+
+
+}
+
+
+
+const borrar = async(id) => {
+    articulos = await cargar();
+    articulos.splice(id, 1);
+    localStorage.setItem('cosas', JSON.stringify(articulos));
+    console.log(articulos.length);
+    if (articulos.length == 0) {
+        localStorage.clear();
+        window.location = "http://localhost:3001";
+    } else {
+        articulos = await JSON.stringify(articulos);
+        console.log(articulos, 'bolsaaaa');
+        window.location = "http://localhost:3001/bolsa?cosas=" + articulos;
+    }
 
 }
 
@@ -114,6 +157,8 @@ const bolsa = async() => {
         }
     }
 }
+
+
 
 // module.exports = {
 //     guardar

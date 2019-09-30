@@ -18,10 +18,11 @@ router.post('/pagar', (req, res) => {
     //res.render('pagarForm', { precio });
 
     axios.post('http://n3gro.com:8081/webpay', {
-            "totalPrice": precio,
-            // "buyOrder": "dsdas",
-            // "sessionId": "dsadsadsdsds",
-            "billingId": Math.round(Math.random() * 99999999),
+            "amount": precio,
+            "buyOrder": "dsdas",
+            "sessionId": "dsadsadsdsds",
+            "urlPag": "http://localhost:3001/ej",
+            // "billingId": Math.round(Math.random() * 99999999),
             "urlRedirect": "http://localhost:3001/ej"
         })
         .then(function(response) {
@@ -52,6 +53,7 @@ router.post('/pagar', (req, res) => {
                     </html>
 
 `
+
             res.end(respuestaaaa);
 
             //console.log(response.url);
