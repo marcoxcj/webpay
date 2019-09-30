@@ -1,0 +1,55 @@
+body {
+    background: gray !important;
+}
+
+#contenedor {
+    /* background: gray !important; */
+    display: flex !important;
+    height: 150px !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#btnPagar {
+    width: 120px !important;
+}
+
+.card {
+    flex-direction: row !important;
+}
+
+td {
+    vertical-align: 0 !important;
+    width: 240px !important;
+    height: 0px !important;
+    text-align: center !important;
+}
+
+th {
+    vertical-align: 0 !important;
+    width: 114px !important;
+    text-align: center !important;
+}
+
+.abs-center {
+    display: none;
+    top: 50%;
+    /* Buscamos el centro horizontal (relativo) del navegador */
+    left: 50%;
+    /* Buscamos el centro vertical (relativo) del navegador */
+    width: 350px;
+    /* Definimos el ancho del objeto a centrar */
+    height: 250px;
+    /* Definimos el alto del objeto a centrar */
+    margin-top: -125px;
+    /* Restamos la mitad de la altura del objeto con un margin-top */
+    margin-left: -175px;
+    /* Restamos la mitad de la anchura del objeto con un margin-left */
+    position: absolute;
+    z-index: 2 !important;
+}
+
+#gif {
+    text-align: center;
+    width: 100% !important;
+}
