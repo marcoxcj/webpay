@@ -67,7 +67,7 @@
                             </p>
                             <!-- <button id="btnPagar" type="submit" onclick="data('<%= cs[i].precio%>')">pagar</button> -->
                             <!-- <a href="/pagar" class="btn btn-info">pagar</a> -->
-                            <input class="btn btn-primary btnPagar" type="submit" onclick="guardar('<%= cs[i].precio%>', '<%= cs[i].titulo%>', '<%= cs[i].img%>')" value="Agregar a mi bolsa">
+                            <input class="btn btn-primary btnPagar" id="btn<%= i%>" type="submit" onclick="guardar('<%= cs[i].precio%>', '<%= cs[i].titulo%>', '<%= cs[i].img%>', this.id)" value="Agregar a mi bolsa">
                         </div>
                     </div>
                     <!-- </form> -->

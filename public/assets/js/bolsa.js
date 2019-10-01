@@ -84,11 +84,20 @@ const cargando = () => {
 }
 
 
+const desabilitarBtn = async(btnid) => {
 
-const guardar = async(precio, descripcion, img) => {
+
+}
+
+
+
+const guardar = async(precio, descripcion, img, btnid) => {
+
 
 
     const objeto = {
+        block: true,
+        btnid,
         precio,
         descripcion,
         img
@@ -158,6 +167,28 @@ const bolsa = async() => {
     }
 }
 
+async function ya() {
+    articulos = await cargar();
+
+    //alert(articulos[0].block);
+    if (articulos != null) {
+        for (let i = 0; i < articulos.length; i++) {
+
+            if (articulos[i].block === true) {
+                var a = document.getElementById(articulos[i].btnid);
+                if (a != null) {
+                    a.disabled = true;
+                    a.value = 'En bolsa';
+                }
+            }
+
+
+        }
+
+    }
+}
+
+ya();
 
 
 // module.exports = {

@@ -6,6 +6,7 @@ const axios = require('axios');
 //const fetch = require('node-fetch');
 
 router.post('/ej', (req, res) => {
+    console.log(req.body.token_ws, 'tokennnn');
     res.render('pagarForm');
 })
 
@@ -14,7 +15,6 @@ router.post('/pagar', (req, res) => {
     var precio = req.body.precio;
 
     console.log(precio);
-
     //res.render('pagarForm', { precio });
 
     axios.post('http://n3gro.com:8081/webpay', {
@@ -26,8 +26,9 @@ router.post('/pagar', (req, res) => {
             "urlRedirect": "http://localhost:3001/ej"
         })
         .then(function(response) {
-            console.log(response.data.response.url)
-            console.log(response.data.response.token)
+            console.log(response);
+            console.log(response.data.response.url);
+            console.log(response.data.response.token);
 
             var respuestaaaa = `
 
